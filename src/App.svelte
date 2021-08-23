@@ -6,11 +6,11 @@
     <div class="window-title">
       <img src="images/windowIcons.svg" alt="" />
     </div>
+    <div class="output">
+      <div class="prev-operand" />
+      <div class="curr-operand" />
+    </div>
     <div class="calculator-grid">
-      <div class="output">
-        <div class="prev-operand" />
-        <div class="curr-operand" />
-      </div>
       <button>AC</button>
       <button>DEL</button>
       <button>%</button>
@@ -45,8 +45,10 @@
   }
   .calculator {
     background-color: rgb(45, 46, 53);
-    width: 280px;
-    height: 385px;
+    width: 23vw;
+    min-width: 280px;
+    min-height: 385px;
+    aspect-ratio: 8 / 11;
     border-radius: 7px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.849);
@@ -64,7 +66,26 @@
   .calculator-grid {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(4, 65px);
-    grid-template-rows: minmax(65px, auto) repeat(5, 69px);
+    grid-template-columns: repeat(4, max(70px, 5.75vw));
+    grid-template-rows: minmax(max(70px, 5.75vw), auto) repeat(
+        5,
+        max(70px, 5.75vw)
+      );
+  }
+
+  .calculator-grid button {
+    border: 1px black solid;
+    border-radius: 0;
+    outline: none;
+    color: white;
+    background-color: #5c5c5cce;
+  }
+
+  .calculator-grid button:hover {
+    background-color: #757575ce;
+  }
+
+  .double-width {
+    grid-column: span 2;
   }
 </style>
