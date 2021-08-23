@@ -21,7 +21,9 @@
   .calculator {
     background-color: rgb(45, 46, 53);
     width: 23vw;
-    height: 30vw;
+    min-width: 280px;
+    min-height: 385px;
+    aspect-ratio: 8 / 11;
     border-radius: 7px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.849);
