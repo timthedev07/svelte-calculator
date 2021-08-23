@@ -45,10 +45,8 @@
   }
   .calculator {
     background-color: rgb(45, 46, 53);
-    width: 23vw;
-    min-width: 280px;
-    min-height: 385px;
-    aspect-ratio: 8 / 11;
+    width: 280px;
+    height: 385px;
     border-radius: 7px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.849);
@@ -66,10 +64,7 @@
   .calculator-grid {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(4, max(65px, 5.75vw));
-    grid-template-rows: minmax(max(65px, 5.75vw), auto) repeat(
-        5,
-        max(77px, 5.75vw)
-      );
+    grid-template-columns: repeat(4, 65px);
+    grid-template-rows: minmax(65px, auto) repeat(5, 69px);
   }
 </style>
