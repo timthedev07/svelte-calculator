@@ -5,6 +5,7 @@
   import HelloWorld from "./HelloWorld.svelte";
   import Image from "./Image.svelte";
   import Logic from "./Logic.svelte";
+  import Input from "./Input.svelte";
 </script>
 
 <main>
@@ -14,4 +15,5 @@
   <Props />
   <Image />
   <Logic />
+  <Input />
 </main>
