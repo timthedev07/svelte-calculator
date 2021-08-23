@@ -15,3 +15,5 @@
 `self` — only trigger handler if `event.target` is the element itself
 
 `trusted` — only trigger handler if `event.isTrusted` is `true`. I.e. if the event is triggered by a user action.
+
+**We are up to bindings/select bindings in the tut.**
