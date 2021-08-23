@@ -1,4 +1,4 @@
-import Experiment from "./Experiment.svelte";
+import Experiment from "./experiment/Experiment.svelte";
 
 // const app = new App({
 //   target: document.body,
