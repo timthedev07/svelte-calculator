@@ -4,6 +4,7 @@
   import Counter from "./Counter.svelte";
   import HelloWorld from "./HelloWorld.svelte";
   import Image from "./Image.svelte";
+  import Logic from "./Logic.svelte";
 </script>
 
 <main>
@@ -12,4 +13,5 @@
   <Array />
   <Props />
   <Image />
+  <Logic />
 </main>
