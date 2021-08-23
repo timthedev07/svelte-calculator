@@ -1,9 +1,10 @@
-import Experiment from "./experiment/Experiment.svelte";
+import App from "./App.svelte";
+// import Experiment from "./experiment/Experiment.svelte";
 
-// const app = new App({
-//   target: document.body,
-// });
+const app = new App({
+  target: document.body,
+});
 
-const experiment = new Experiment({ target: document.body });
+// const experiment = new Experiment({ target: document.body });
 
-export default experiment;
+export default app;
