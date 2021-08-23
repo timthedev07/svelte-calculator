@@ -4,19 +4,14 @@
   $: sum = nums.reduce((val, total) => val + total);
 </script>
 
-<main>
-  <h4>Numbers and sum</h4>
-  <pre>
+<h4>Numbers and sum</h4>
+<pre>
     sum({JSON.stringify(nums)}) = {sum}
   </pre>
-  <button
-    on:click={() => {
-      nums = [...nums, nums.length];
-    }}
-  >
-    Add item
-  </button>
-</main>
-
-<style>
-</style>
+<button
+  on:click={() => {
+    nums = [...nums, nums.length];
+  }}
+>
+  Add item
+</button>
