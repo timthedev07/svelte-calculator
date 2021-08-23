@@ -17,3 +17,9 @@
   <Logic />
   <Input />
 </main>
+
+<style>
+  main {
+    margin-bottom: 140px;
+  }
+</style>
