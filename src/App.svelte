@@ -6,6 +6,31 @@
     <div class="window-title">
       <img src="images/windowIcons.svg" alt="" />
     </div>
+    <div class="calculator-grid">
+      <div class="output">
+        <div class="prev-operand" />
+        <div class="curr-operand" />
+      </div>
+      <button>AC</button>
+      <button>DEL</button>
+      <button>%</button>
+      <button>÷</button>
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button>x</button>
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button>-</button>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>+</button>
+      <button class="double-width">0</button>
+      <button>.</button>
+      <button>=</button>
+    </div>
   </div>
 </main>
 
@@ -36,5 +61,15 @@
     justify-content: flex-start;
     align-items: center;
     background-color: rgb(32, 32, 36);
+  }
+
+  .calculator-grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, max(65px, 5.75vw));
+    grid-template-rows: minmax(max(65px, 5.75vw), auto) repeat(
+        5,
+        max(77px, 5.75vw)
+      );
   }
 </style>
