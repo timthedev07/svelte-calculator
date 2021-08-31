@@ -1,7 +1,7 @@
 export type Operator = "+" | "-" | "*" | "/" | "%";
 
 export interface CalculatorState {
-  result?: number;
-  currentOperand?: number;
+  result?: string;
+  currentOperand?: string;
   operator?: Operator;
 }
