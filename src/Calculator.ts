@@ -1,3 +1,5 @@
+import { Operator } from "./types";
+
 export const operate = (
   operand0: number | null,
   operand1: number | null,
