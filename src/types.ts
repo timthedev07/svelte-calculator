@@ -2,6 +2,7 @@ export type Operator = "+" | "-" | "*" | "/" | "%";
 
 export interface CalculatorState {
   result?: string;
-  currentOperand?: string;
+  prevOperand?: string;
+  currOperand?: string;
   operator?: Operator;
 }
