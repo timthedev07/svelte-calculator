@@ -1,4 +1,13 @@
 <script lang="ts">
+  import { handleAction } from "./Calculator";
+
+  import type { CalculatorState } from "./types";
+
+  let calculatorState: CalculatorState = {};
+
+  const handleClick: svelte.JSX.MouseEventHandler<HTMLButtonElement> = (e) => {
+    calculatorState = handleAction(calculatorState, e.currentTarget.name);
+  };
 </script>
 
 <main>
@@ -7,29 +16,31 @@
       <img src="images/windowIcons.svg" alt="" />
     </div>
     <div class="output">
-      <div class="prev-operand">123</div>
-      <div class="curr-operand">8347347924728947239843</div>
+      <div class="prev-operand">{calculatorState.prevOperand || ""}</div>
+      <div class="curr-operand">
+        {calculatorState.currOperand || ""}
+      </div>
     </div>
     <div class="calculator-grid">
-      <button>AC</button>
-      <button>DEL</button>
-      <button>%</button>
-      <button class="operator">÷</button>
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button class="operator">x</button>
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button class="operator">-</button>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button class="operator">+</button>
-      <button class="double-width">0</button>
-      <button>.</button>
-      <button class="operator">=</button>
+      <button on:click={handleClick} name="AC">AC</button>
+      <button on:click={handleClick} name="DEL">DEL</button>
+      <button on:click={handleClick} name="%">%</button>
+      <button on:click={handleClick} name="/" class="operator">÷</button>
+      <button on:click={handleClick} name="7">7</button>
+      <button on:click={handleClick} name="8">8</button>
+      <button on:click={handleClick} name="9">9</button>
+      <button on:click={handleClick} name="*" class="operator">x</button>
+      <button on:click={handleClick} name="4">4</button>
+      <button on:click={handleClick} name="5">5</button>
+      <button on:click={handleClick} name="6">6</button>
+      <button on:click={handleClick} name="-" class="operator">-</button>
+      <button on:click={handleClick} name="1">1</button>
+      <button on:click={handleClick} name="2">2</button>
+      <button on:click={handleClick} name="3">3</button>
+      <button on:click={handleClick} name="+" class="operator">+</button>
+      <button on:click={handleClick} name="0" class="double-width">0</button>
+      <button on:click={handleClick} name=".">.</button>
+      <button on:click={handleClick} name="=" class="operator">=</button>
     </div>
   </div>
 </main>
@@ -47,7 +58,6 @@
     background-color: rgb(45, 46, 53);
     width: 280px;
     height: 480px;
-    /* aspect-ratio: 14 / 25; */
     border-radius: 7px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.849);
@@ -104,6 +114,7 @@
   .prev-operand {
     font-size: 0.5rem;
   }
+
   .curr-operand {
     font-size: 1.6rem;
     height: 50px;
