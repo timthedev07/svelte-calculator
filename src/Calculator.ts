@@ -60,8 +60,8 @@ export const handleAction = (
 
   if (key === "=" && calculatorState.operator) {
     const operationResult = operate(
-      calculatorState.currOperand,
       calculatorState.prevOperand,
+      calculatorState.currOperand,
       calculatorState.operator
     ).toString();
     return {
