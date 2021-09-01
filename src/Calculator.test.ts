@@ -51,6 +51,21 @@ describe("Calculator action handler", () => {
     });
   });
 
+  test("correctly appends digit to the current operand", () => {
+    expect(
+      handleAction(
+        {
+          ...initialState,
+          currOperand: "1234",
+        },
+        "5"
+      )
+    ).toEqual({
+      ...initialState,
+      currOperand: "12345",
+    });
+  });
+
   describe("correctly performs arithmetic operations", () => {
     test("addition", () => {
       expect(
