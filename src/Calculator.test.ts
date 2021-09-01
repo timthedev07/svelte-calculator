@@ -6,7 +6,6 @@ const initialState = {
   currOperand: undefined,
   operator: undefined,
   prevOperand: undefined,
-  result: undefined,
 } as CalculatorState;
 
 describe("Calculator action handler", () => {
@@ -17,7 +16,6 @@ describe("Calculator action handler", () => {
           currOperand: "3",
           operator: "+",
           prevOperand: "200",
-          result: undefined,
         },
         "AC"
       )
@@ -80,7 +78,6 @@ describe("Calculator action handler", () => {
       prevOperand: "30",
       currOperand: undefined,
       operator: "+",
-      result: undefined,
     });
   });
 
@@ -92,14 +89,12 @@ describe("Calculator action handler", () => {
             currOperand: "10",
             operator: "+",
             prevOperand: "400",
-            result: undefined,
           },
           "="
         )
       ).toEqual({
         ...initialState,
-        prevOperand: "410",
-        result: "410",
+        currOperand: "410",
       });
     });
 
@@ -110,14 +105,12 @@ describe("Calculator action handler", () => {
             currOperand: "200",
             operator: "-",
             prevOperand: "1000",
-            result: undefined,
           },
           "="
         )
       ).toEqual({
         ...initialState,
-        prevOperand: "800",
-        result: "800",
+        currOperand: "800",
       });
     });
 
@@ -128,14 +121,12 @@ describe("Calculator action handler", () => {
             prevOperand: "175",
             currOperand: "10",
             operator: "*",
-            result: undefined,
           },
           "="
         )
       ).toEqual({
         ...initialState,
-        prevOperand: "1750",
-        result: "1750",
+        currOperand: "1750",
       });
     });
 
@@ -146,14 +137,12 @@ describe("Calculator action handler", () => {
             prevOperand: "175",
             currOperand: "10",
             operator: "/",
-            result: undefined,
           },
           "="
         )
       ).toEqual({
         ...initialState,
-        prevOperand: "17.5",
-        result: "17.5",
+        currOperand: "17.5",
       });
     });
 
@@ -164,14 +153,12 @@ describe("Calculator action handler", () => {
             prevOperand: "175",
             currOperand: "10",
             operator: "%",
-            result: undefined,
           },
           "="
         )
       ).toEqual({
         ...initialState,
-        prevOperand: "5",
-        result: "5",
+        currOperand: "5",
       });
     });
   });
