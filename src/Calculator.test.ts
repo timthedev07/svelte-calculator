@@ -74,9 +74,9 @@ describe("Calculator action handler", () => {
       expect(
         handleAction(
           {
-            currOperand: "1000",
+            currOperand: "2000",
             operator: "-",
-            prevOperand: "200",
+            prevOperand: "1000",
             result: undefined,
           },
           "="
@@ -92,9 +92,9 @@ describe("Calculator action handler", () => {
       expect(
         handleAction(
           {
-            currOperand: "175",
+            prevOperand: "175",
+            currOperand: "10",
             operator: "*",
-            prevOperand: "10",
             result: undefined,
           },
           "="
@@ -110,9 +110,9 @@ describe("Calculator action handler", () => {
       expect(
         handleAction(
           {
-            currOperand: "175",
+            prevOperand: "175",
+            currOperand: "10",
             operator: "/",
-            prevOperand: "10",
             result: undefined,
           },
           "="
@@ -128,9 +128,9 @@ describe("Calculator action handler", () => {
       expect(
         handleAction(
           {
-            currOperand: "175",
+            prevOperand: "175",
+            currOperand: "10",
             operator: "%",
-            prevOperand: "10",
             result: undefined,
           },
           "="
