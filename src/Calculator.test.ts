@@ -64,10 +64,45 @@ describe("Calculator action handler", () => {
           "="
         )
       ).toEqual({
-        currOperand: undefined,
-        operator: undefined,
+        ...initialState,
         prevOperand: "410",
         result: "410",
+      });
+    });
+
+    test("subtracts a number from another", () => {
+      expect(
+        handleAction(
+          {
+            currOperand: "1000",
+            operator: "-",
+            prevOperand: "200",
+            result: undefined,
+          },
+          "="
+        )
+      ).toEqual({
+        ...initialState,
+        prevOperand: "800",
+        result: "800",
+      });
+    });
+
+    test("multiply two numbers", () => {
+      expect(
+        handleAction(
+          {
+            currOperand: "175",
+            operator: "*",
+            prevOperand: "10",
+            result: undefined,
+          },
+          "="
+        )
+      ).toEqual({
+        ...initialState,
+        prevOperand: "1750",
+        result: "1750",
       });
     });
   });
