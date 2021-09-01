@@ -74,7 +74,7 @@ describe("Calculator action handler", () => {
       expect(
         handleAction(
           {
-            currOperand: "2000",
+            currOperand: "200",
             operator: "-",
             prevOperand: "1000",
             result: undefined,
