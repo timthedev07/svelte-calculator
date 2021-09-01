@@ -29,6 +29,9 @@ export const operate = (
         return num0 / num1;
       }
     }
+    case "%": {
+      return num0 % num1;
+    }
     default: {
       throw Error(`Unknown operator '${operator}'`);
     }
