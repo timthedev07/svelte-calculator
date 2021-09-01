@@ -82,16 +82,23 @@ export const handleAction = (
   }
 
   // then key is operator
-  if (
-    (calculatorState.currOperand || calculatorState.prevOperand) &&
-    !calculatorState.operator
-  )
-    return {
-      operator: key as Operator,
-      currOperand: undefined,
-      prevOperand: calculatorState.currOperand,
-    };
-  else {
+  if (calculatorState.currOperand || calculatorState.prevOperand) {
+    // if there isn't already a operator,
+    // update operator and move curr operand to prev operand
+    if (!calculatorState.operator) {
+      return {
+        operator: key as Operator,
+        currOperand: undefined,
+        prevOperand: calculatorState.currOperand,
+      };
+    } else {
+      // if the user wants to change the operator before entering the next operand
+      return {
+        ...calculatorState,
+        operator: key as Operator,
+      };
+    }
+  } else {
     return calculatorState;
   }
 };
