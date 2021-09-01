@@ -82,9 +82,16 @@ export const handleAction = (
   }
 
   // then key is operator
-  return {
-    operator: key as Operator,
-    currOperand: undefined,
-    prevOperand: calculatorState.currOperand,
-  };
+  if (
+    (calculatorState.currOperand || calculatorState.prevOperand) &&
+    !calculatorState.operator
+  )
+    return {
+      operator: key as Operator,
+      currOperand: undefined,
+      prevOperand: calculatorState.currOperand,
+    };
+  else {
+    return calculatorState;
+  }
 };
