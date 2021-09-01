@@ -55,17 +55,19 @@ export const handleAction = (
         : undefined,
     };
 
-  if (key === "=" && calculatorState.operator)
+  if (key === "=" && calculatorState.operator) {
+    const operationResult = operate(
+      calculatorState.currOperand,
+      calculatorState.prevOperand,
+      calculatorState.operator
+    ).toString();
     return {
       currOperand: undefined,
-      result: operate(
-        calculatorState.currOperand,
-        calculatorState.prevOperand,
-        calculatorState.operator
-      ).toString(),
+      result: operationResult,
       operator: undefined,
-      prevOperand: calculatorState.currOperand,
+      prevOperand: operationResult,
     };
+  }
 
   if (isNumber(key)) {
     return {
