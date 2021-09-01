@@ -66,6 +66,24 @@ describe("Calculator action handler", () => {
     });
   });
 
+  test("correctly handles operator click", () => {
+    expect(
+      handleAction(
+        {
+          ...initialState,
+          currOperand: "30",
+          operator: undefined,
+        },
+        "+"
+      )
+    ).toEqual({
+      prevOperand: "30",
+      currOperand: undefined,
+      operator: "+",
+      result: undefined,
+    });
+  });
+
   describe("correctly performs arithmetic operations", () => {
     test("addition", () => {
       expect(
