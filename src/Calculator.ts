@@ -45,7 +45,6 @@ export const handleAction = (
   if (key === "AC")
     return {
       currOperand: undefined,
-      result: undefined,
       operator: undefined,
       prevOperand: undefined,
     };
@@ -59,23 +58,26 @@ export const handleAction = (
     };
 
   if (key === "=" && calculatorState.operator) {
+    console.log(calculatorState);
     const operationResult = operate(
       calculatorState.prevOperand,
       calculatorState.currOperand,
       calculatorState.operator
     ).toString();
     return {
-      currOperand: undefined,
-      result: operationResult,
+      currOperand: operationResult,
       operator: undefined,
-      prevOperand: operationResult,
+      prevOperand: undefined,
     };
   }
 
   if (isNumber(key)) {
     return {
       ...calculatorState,
-      currOperand: (calculatorState.currOperand || "") + key,
+      currOperand:
+        calculatorState.currOperand === "0"
+          ? key
+          : (calculatorState.currOperand || "") + key,
     };
   }
 
@@ -84,6 +86,5 @@ export const handleAction = (
     operator: key as Operator,
     currOperand: undefined,
     prevOperand: calculatorState.currOperand,
-    result: undefined,
   };
 };
