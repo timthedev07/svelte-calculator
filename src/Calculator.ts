@@ -6,8 +6,8 @@ export const operate = (
   operand1: string | undefined,
   operator: Operator
 ): number => {
-  const num0 = parseInt(operand0 || "0");
-  const num1 = parseInt(
+  const num0 = parseFloat(operand0 || "0");
+  const num1 = parseFloat(
     operand1 || (operator === "/" || operator === "*" ? "1" : "0")
   );
 
